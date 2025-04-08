@@ -27,7 +27,7 @@ jobs:
 
     - name: Deploy over SSH
       run: |
-        ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -p 24 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+        ssh -vvv -i ~/.ssh/id_rsa -o IdentitiesOnly=yes -p 24 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
           cd ~/movie.tai.ro   # Or use $DEPLOY_PATH if you added it
           git pull origin main
         EOF
