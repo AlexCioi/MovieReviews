@@ -1,0 +1,11 @@
+user:
+    user:
+        labels:
+            account: Cont
+            logout: Deconectare
+
+    security:
+        labels:
+            register: Înregistrare
+            password: Parolă
+            confirm_password: Confirmare parolă

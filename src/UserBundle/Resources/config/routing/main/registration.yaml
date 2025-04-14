@@ -1,0 +1,7 @@
+user_registration_register:
+    path: /register.{_format}
+    controller: UserBundle\Controller\RegistrationController::register
+
+user_registration_verify_email:
+    path: /verify/email
+    controller: UserBundle\Controller\RegistrationController::verifyUserEmail

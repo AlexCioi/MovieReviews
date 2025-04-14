@@ -1,0 +1,4 @@
+main_user_profile_show:
+    path: /user/profile/show
+    controller: UserBundle\Controller\ProfileController::showAction
+    methods: GET
