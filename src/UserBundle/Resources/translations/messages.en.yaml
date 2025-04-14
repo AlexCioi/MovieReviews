@@ -1,0 +1,11 @@
+user:
+    user:
+        labels:
+            account: Account
+            logout: Logout
+
+    security:
+        labels:
+            register: Register
+            password: Password
+            confirm_password: Password confirmation

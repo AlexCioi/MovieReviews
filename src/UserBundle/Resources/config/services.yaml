@@ -1,0 +1,21 @@
+
+services:
+    UserBundle\Controller\:
+        resource: "%kernel.project_dir%/src/UserBundle/Controller/*"
+        autowire: true
+        autoconfigure: true
+
+    UserBundle\Security\:
+        resource: "%kernel.project_dir%/src/UserBundle/Security/*"
+        autowire: true
+        autoconfigure: true
+
+    UserBundle\Repository\:
+        resource: "%kernel.project_dir%/src/UserBundle/Repository/*"
+        autowire: true
+        autoconfigure: true
+
+    UserBundle\Service\:
+        resource: "%kernel.project_dir%/src/UserBundle/Service/*"
+        autowire: true
+        autoconfigure: true

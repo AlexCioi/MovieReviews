@@ -1,0 +1,6 @@
+
+main_user_import:
+    resource: "@UserBundle/Resources/config/routing/main/_entrypoint.yaml"
+    prefix: /
+    defaults:
+        _format: 'html'

@@ -1,0 +1,15 @@
+main_user_user_import:
+    resource: "@UserBundle/Resources/config/routing/main/user.yaml"
+    prefix: /
+
+main_user_security_import:
+    resource: "@UserBundle/Resources/config/routing/main/security.yaml"
+    prefix: /
+
+main_user_registration_import:
+    resource: "@UserBundle/Resources/config/routing/main/registration.yaml"
+    prefix: /
+
+main_user_profile_import:
+    resource: "@UserBundle/Resources/config/routing/main/profile.yaml"
+    prefix: /
