@@ -1,0 +1,6 @@
+
+admin_movie_import:
+    resource: "@MovieBundle/Resources/config/routing/admin/_entrypoint.yaml"
+    prefix: /admin
+    defaults:
+        _format: 'html'

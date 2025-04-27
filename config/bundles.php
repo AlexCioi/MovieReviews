@@ -16,4 +16,5 @@ return [
     UserBundle\UserBundle::class => ['all' => true],
     SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle::class => ['all' => true],
     Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle::class => ['all' => true],
+    MovieBundle\MovieBundle::class => ['all' => true],
 ];

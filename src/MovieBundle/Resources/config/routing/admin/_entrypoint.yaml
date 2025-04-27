@@ -1,0 +1,4 @@
+
+admin_movie_movie_import:
+    resource: "@MovieBundle/Resources/config/routing/admin/movie.yaml"
+    prefix: /
