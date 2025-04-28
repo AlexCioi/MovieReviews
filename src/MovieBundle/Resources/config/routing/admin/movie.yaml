@@ -1,0 +1,20 @@
+
+admin_movie_movie_list:
+    path: /movies
+    controller: MovieBundle\Controller\MovieController::listAdminAction
+    methods: GET
+
+admin_movie_movie_new:
+    path: /movies/new
+    controller: MovieBundle\Controller\MovieController::newAdminAction
+    methods: GET|POST
+
+admin_movie_movie_edit:
+    path: /movies/{id}/edit
+    controller: MovieBundle\Controller\MovieController::editAdminAction
+    methods: GET|POST
+
+admin_movie_movie_delete:
+    path: /movies/{id}/edit
+    controller: MovieBundle\Controller\MovieController::deleteAdminAction
+    methods: GET|DELETE

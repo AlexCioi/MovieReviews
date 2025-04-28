@@ -1,0 +1,21 @@
+
+services:
+    MovieBundle\Controller\:
+        resource: "%kernel.project_dir%/src/MovieBundle/Controller/*"
+        autowire: true
+        autoconfigure: true
+
+    MovieBundle\Service\:
+        resource: "%kernel.project_dir%/src/MovieBundle/Service/*"
+        autowire: true
+        autoconfigure: true
+
+    MovieBundle\Form\Factory\:
+        resource: "%kernel.project_dir%/src/MovieBundle/Form/Factory/*"
+        autowire: true
+        autoconfigure: true
+
+    MovieBundle\Repository\:
+        resource: "%kernel.project_dir%/src/MovieBundle/Repository/*"
+        autowire: true
+        autoconfigure: true

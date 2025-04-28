@@ -5,3 +5,7 @@ app:
 user:
     resource: "@UserBundle/Resources/config/routing.yaml"
     prefix: /
+
+movie:
+    resource: "@MovieBundle/Resources/config/routing.yaml"
+    prefix: /

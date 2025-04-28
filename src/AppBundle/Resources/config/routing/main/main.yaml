@@ -1,0 +1,5 @@
+
+app_main_homepage:
+    path: /
+    controller: AppBundle\Controller\MainController::homepageAction
+    methods: GET
