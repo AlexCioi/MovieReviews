@@ -52,6 +52,8 @@ class MovieController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $this->entityService->save($movie);
+
+            return $this->redirectToRoute('admin_movie_movie_list');
         }
 
         return $this->render('@Movie/Movie/admin/new.html.twig', [
@@ -69,6 +71,8 @@ class MovieController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $this->entityService->save($movie);
+
+            return $this->redirectToRoute('admin_movie_movie_list');
         }
 
         return $this->render('@Movie/Movie/admin/edit.html.twig', [
