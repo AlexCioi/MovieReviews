@@ -23,9 +23,23 @@ class MovieController extends AbstractController
     {
     }
 
+    public function listAction(Request $request): Response
+    {
+        $movies = $this->em->getRepository(Movie::class)->findAll();
+
+        return $this->render('@Movie/Movie/public/list.html.twig', [
+            'movies' => $movies,
+        ]);
+    }
+
+    #[IsGranted('ROLE_ADMIN')]
     public function listAdminAction(Request $request): Response
     {
-        return $this->render('@Movie/Movie/admin/list.html.twig');
+        $movies = $this->em->getRepository(Movie::class)->findAll();
+
+        return $this->render('@Movie/Movie/admin/list.html.twig', [
+            'movies' => $movies,
+        ]);
     }
 
     #[IsGranted('ROLE_ADMIN')]

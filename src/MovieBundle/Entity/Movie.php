@@ -10,6 +10,8 @@ use MovieBundle\Repository\MovieRepository;
 #[ORM\Table(name: 'movie__movie')]
 class Movie
 {
+    const ENTITY_ALIAS = 'mv';
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: Types::INTEGER)]

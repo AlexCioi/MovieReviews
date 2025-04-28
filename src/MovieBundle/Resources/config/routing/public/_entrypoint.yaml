@@ -1,0 +1,4 @@
+
+public_movie_movie_import:
+    resource: "@MovieBundle/Resources/config/routing/public/movie.yaml"
+    prefix: /

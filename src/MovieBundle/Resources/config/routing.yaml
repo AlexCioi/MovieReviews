@@ -4,3 +4,9 @@ admin_movie_import:
     prefix: /admin
     defaults:
         _format: 'html'
+
+public_movie_import:
+    resource: "@MovieBundle/Resources/config/routing/public/_entrypoint.yaml"
+    prefix: /public
+    defaults:
+        _format: 'html'

@@ -1,0 +1,5 @@
+
+public_movie_movie_list:
+    path: /movies
+    controller: MovieBundle\Controller\MovieController::listAction
+    methods: GET

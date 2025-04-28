@@ -14,3 +14,8 @@ services:
         resource: "%kernel.project_dir%/src/MovieBundle/Form/Factory/*"
         autowire: true
         autoconfigure: true
+
+    MovieBundle\Repository\:
+        resource: "%kernel.project_dir%/src/MovieBundle/Repository/*"
+        autowire: true
+        autoconfigure: true
