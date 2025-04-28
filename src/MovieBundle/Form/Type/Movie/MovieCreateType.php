@@ -19,7 +19,8 @@ class MovieCreateType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Movie::class
+            'data_class' => Movie::class,
+            'csrf_protection' => false,
         ]);
     }
 }

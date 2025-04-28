@@ -87,6 +87,6 @@ class MovieController extends AbstractController
 
         $this->entityService->delete($movie);
 
-        return $this->redirect($request->headers->get('referer'));
+        return $this->redirectToRoute('admin_movie_movie_list');
     }
 }
