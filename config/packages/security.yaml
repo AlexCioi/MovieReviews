@@ -22,7 +22,7 @@ security:
             form_login:
                 login_path: user_security_login
                 check_path: user_security_login
-                enable_csrf: true
+                enable_csrf: false
             logout:
                 path: user_security_logout
                 invalidate_session: true

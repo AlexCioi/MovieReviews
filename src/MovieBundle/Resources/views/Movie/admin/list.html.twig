@@ -1,5 +1,54 @@
 {% extends 'admin/2cols.html.twig' %}
 
 {% block content %}
-
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex align-items-center gap-2">
+                        <h4 class="mb-0">Movies</h4>
+                        <a href="{{ path('admin_movie_movie_new') }}" class="btn btn-outline-dark btn-sm">
+                            <i class="bi-plus-lg"></i>
+                            Create
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th class="min-width-column">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for movie in movies %}
+                            <tr>
+                                <td>{{ movie.id }}</td>
+                                <td>{{ movie.title }}</td>
+                                <td>{{ movie.description }}</td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-1">
+                                        <a href="{{ path('admin_movie_movie_edit', {'id': movie.id}) }}">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        <a
+                                            href="{{ path('admin_movie_movie_delete', {'id': movie.id}) }}"
+                                            class="text-danger"
+                                            onclick="return confirm('Are you sure you want to delete this movie?')"
+                                        >
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

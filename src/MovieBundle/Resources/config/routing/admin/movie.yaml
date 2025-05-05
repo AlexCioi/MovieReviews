@@ -15,6 +15,6 @@ admin_movie_movie_edit:
     methods: GET|POST
 
 admin_movie_movie_delete:
-    path: /movies/{id}/edit
+    path: /movies/{id}/delete
     controller: MovieBundle\Controller\MovieController::deleteAdminAction
     methods: GET|DELETE
