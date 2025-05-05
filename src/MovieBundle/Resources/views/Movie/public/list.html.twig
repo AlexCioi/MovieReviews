@@ -1,5 +1,27 @@
 {% extends 'main/1cols.html.twig' %}
 
 {% block content %}
-
+    {% for movie in movies %}
+        <div class="row justify-content-center mb-3">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center fs-5 mb-3">
+                            <span class="fw-medium">{{ movie.title }}</span>
+                            <a href="{{ path('public_movie_user_movie_favourite_hit', {'movieId': movie.id}) }}" class="ms-auto text-danger">
+                                {% if isMovieFavourite(movie) %}
+                                    <i class="bi bi-heart-fill"></i>
+                                {% else %}
+                                    <i class="bi bi-heart"></i>
+                                {% endif %}
+                            </a>
+                        </div>
+                        <p>
+                            {{ movie.description }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}

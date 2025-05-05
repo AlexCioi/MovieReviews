@@ -19,3 +19,8 @@ services:
         resource: "%kernel.project_dir%/src/MovieBundle/Repository/*"
         autowire: true
         autoconfigure: true
+
+    MovieBundle\Twig\:
+        resource: "%kernel.project_dir%/src/MovieBundle/Twig/*"
+        autowire: true
+        autoconfigure: true

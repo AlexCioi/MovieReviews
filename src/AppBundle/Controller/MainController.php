@@ -10,6 +10,6 @@ class MainController extends AbstractController
 {
     public function homepageAction(Request $request): Response
     {
-        return $this->render('@App/Main/homepage.html.twig');
+        return $this->redirectToRoute('public_movie_movie_list');
     }
 }

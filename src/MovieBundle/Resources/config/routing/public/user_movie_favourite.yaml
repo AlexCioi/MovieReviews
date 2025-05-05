@@ -1,0 +1,5 @@
+
+public_movie_user_movie_favourite_hit:
+    path: /movies/{movieId}/users/-/favourites/hit
+    controller: MovieBundle\Controller\UserMovieFavouriteController::hitAction
+    methods: GET
