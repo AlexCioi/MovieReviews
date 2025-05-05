@@ -2,6 +2,7 @@
 
 namespace MovieBundle\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use MovieBundle\Repository\MovieRepository;
@@ -22,6 +23,10 @@ class Movie
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     protected ?string $description = null;
+
+    #[ORM\ManyToMany(targetEntity: MovieCategory::class)]
+    #[ORM\JoinTable(name: 'movie__movies_categories')]
+    protected ?Collection $categories = null;
 
     public function getId(): ?int
     {
@@ -50,5 +55,25 @@ class Movie
         $this->description = $description;
 
         return $this;
+    }
+
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(MovieCategory $category): void
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories->add($category);
+            $category->addMovie($this); // Sync the owning side
+        }
+    }
+
+    public function removeCategory(MovieCategory $category): void
+    {
+        if ($this->categories->removeElement($category)) {
+            $category->removeMovie($this); // Sync the owning side
+        }
     }
 }

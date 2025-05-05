@@ -1,0 +1,15 @@
+
+admin_movie_movie_category_list:
+    path: /movies/categories.{_format}
+    controller: MovieBundle\Controller\MovieCategoryController::listAdminAction
+    methods: GET
+
+admin_movie_movie_category_new:
+    path: /movies/categories/new.{_format}
+    controller: MovieBundle\Controller\MovieCategoryController::newAdminAction
+    methods: GET|POST
+
+admin_movie_movie_category_edit:
+    path: /movies/categories/{id}/edit.{_format}
+    controller: MovieBundle\Controller\MovieCategoryController::editAdminAction
+    methods: GET|POST

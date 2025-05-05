@@ -2,3 +2,7 @@
 admin_movie_movie_import:
     resource: "@MovieBundle/Resources/config/routing/admin/movie.yaml"
     prefix: /
+
+admin_movie_movie_category_import:
+    resource: "@MovieBundle/Resources/config/routing/admin/movie_category.yaml"
+    prefix: /

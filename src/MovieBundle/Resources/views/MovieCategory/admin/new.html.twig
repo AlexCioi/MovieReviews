@@ -1,0 +1,36 @@
+{% extends 'admin/2cols.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex align-items-center gap-2">
+                        {% set route = app.current_route %}
+                        <span>
+                            {% if route ends with '_edit' %}Edit{% else %}New{% endif %} movie category
+                        </span>
+                        <a href="{{ path('admin_movie_movie_category_list') }}" class="text-danger">
+                            <i class="bi bi-x-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    {{ form_start(form) }}
+                        {{ form_label(form.name, null, {
+                            'label_attr': {
+                                'class': 'form-label'
+                            }
+                        }) }}
+                        {{ form_widget(form.name, {
+                            'attr': {
+                                'class': 'form-control mb-3'
+                            }
+                        }) }}
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
