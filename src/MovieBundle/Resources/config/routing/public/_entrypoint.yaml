@@ -2,3 +2,7 @@
 public_movie_movie_import:
     resource: "@MovieBundle/Resources/config/routing/public/movie.yaml"
     prefix: /
+
+public_movie_user_movie_favourite_import:
+    resource: "@MovieBundle/Resources/config/routing/public/user_movie_favourite.yaml"
+    prefix: /
