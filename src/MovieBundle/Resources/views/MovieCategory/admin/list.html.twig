@@ -1,0 +1,46 @@
+{% extends 'admin/2cols.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex align-items-center gap-2">
+                        <h4 class="mb-0">Movie categories</h4>
+
+                        <a href="{{ path('admin_movie_movie_category_new') }}" class="ms-auto btn btn-sm btn-outline-dark">
+                            <i class="bi bi-plus-lg"></i>
+                            Create
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th class="min-width-column">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for category in movieCategories %}
+                                <tr>
+                                    <td>{{ category.id }}</td>
+                                    <td>{{ category.name }}</td>
+                                    <td>
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <a href="{{ path('admin_movie_movie_category_edit', {'id': category.id}) }}">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
