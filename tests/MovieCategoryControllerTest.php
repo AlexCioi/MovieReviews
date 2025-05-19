@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class MovieControllerTest extends WebTestCase
+class MovieCategoryControllerTest extends WebTestCase
 {
     public function testListAdminActionForAdmin(): void
     {
@@ -32,11 +32,11 @@ class MovieControllerTest extends WebTestCase
 
         $client->loginUser($testUser);
 
-        $client->request('GET', $router->generate('admin_movie_movie_list'));
+        $client->request('GET', $router->generate('admin_movie_movie_category_list'));
 
         $this->assertResponseIsSuccessful();
 
-        $this->assertSelectorTextSame('h4', 'Movies');
+        $this->assertSelectorTextSame('h4', 'Movie categories');
 
         $em->remove($testUser);
         $em->flush();
@@ -48,7 +48,7 @@ class MovieControllerTest extends WebTestCase
 
         $router = static::getContainer()->get('router');
 
-        $client->request('GET', $router->generate('admin_movie_movie_list'));
+        $client->request('GET', $router->generate('admin_movie_movie_category_list'));
 
         $this->assertResponseStatusCodeSame(302);
     }

@@ -10,6 +10,7 @@ use MovieBundle\Service\MovieCategoryManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class MovieCategoryController extends AbstractController
 {
@@ -27,6 +28,7 @@ class MovieCategoryController extends AbstractController
 
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     public function listAdminAction(): Response
     {
         $movieCategories = $this->em->getRepository(MovieCategory::class)->findAll();
@@ -36,6 +38,7 @@ class MovieCategoryController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     public function newAdminAction(Request $request): Response
     {
         $movieCategory = $this->movieCategoryManager->newInstance();
@@ -54,6 +57,7 @@ class MovieCategoryController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN')]
     public function editAdminAction($id, Request $request): Response
     {
         $movieCategory = $this->entityService->findOrReject(MovieCategory::class, $id);
